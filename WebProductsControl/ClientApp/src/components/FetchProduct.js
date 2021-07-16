@@ -18,7 +18,7 @@ export class FetchProduct extends Component {
     }
 
     static handleDelete(id) {
-        if (!window.confirm("Are you sure you want to remove product: " + id) {
+        if (!window.confirm("Are you sure you want to remove product: " + id)) {
             return;
         } else {
             fetch("api/products/" + id, { method: 'delete' })
@@ -36,22 +36,22 @@ export class FetchProduct extends Component {
                     <tr>
                         <th>Code</th>
                         <th>Description</th>
-                        <th></th>                        
+                        <th>Actions</th>
                     </tr>
-                    <body>
-                        {products.map(prod =>
-                            <tr key={prod.id}>
-                                <td> {prod.id}</td>
-                                <td> {prod.description}</td>
-
-                                <td>
-                                    <button className="btn btn-success" onClick={(id) => this.handleEdit(prod.id)}>Edit</button> &nbsp;
-                                    <button className="btn btn-danger" onClick={(id) => this.handleDelete(prod.id)}>Delete</button> ;
-                                </td>
-                            </tr>
-                        )}
-                    </body>
                 </thead>
+                <tbody>
+                    {products.map(prod =>
+                        <tr key={prod.id}>
+                            <td>{prod.id}</td>
+                            <td>{prod.description}</td>
+
+                            <td>
+                                <button className="btn btn-success" onClick={(id) => this.handleEdit(prod.id)}>Edit</button>&nbsp;
+                                <button className="btn btn-danger" onClick={(id) => this.handleDelete(prod.id)}>Delete</button>
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
             </table>
         );
     }
