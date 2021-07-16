@@ -14,6 +14,6 @@ namespace WebProductsControl.Config
             Database.EnsureCreated();
         }
 
-        public DbSet<Product> Produto { get; set; }
+        public DbSet<Product> Product { get; set; }
     }
 }

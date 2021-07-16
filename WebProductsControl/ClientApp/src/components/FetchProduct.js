@@ -23,7 +23,7 @@ export class FetchProduct extends Component {
         } else {
             fetch("api/products/" + id, { method: 'delete' })
                 .then(json => {
-                    window.location.href = "fetch-produto";
+                    window.location.href = "fetch-product";
                     alert('Item successfully removed!');
                 })
         }

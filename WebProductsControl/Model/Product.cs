@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebProductsControl.Model
 {
-    [Table("Produto")]
+    [Table("Product")]
     public class Product
     {
         [Column("Id")]
