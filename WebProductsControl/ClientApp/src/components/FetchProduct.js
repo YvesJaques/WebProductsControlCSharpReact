@@ -14,14 +14,14 @@ export class FetchProduct extends Component {
     }
 
     static handleEdit(id) {
-        window.location.href = "/product/edit" + id;
+        window.location.href = "/product/edit/" + id;
     }
 
-    static handleDelete(id) {
+    static async handleDelete(id) {
         if (!window.confirm("Are you sure you want to remove product: " + id)) {
             return;
         } else {
-            fetch("api/products/" + id, { method: 'delete' })
+            await fetch("api/products/" + id, { method: 'delete' })
                 .then(json => {
                     window.location.href = "fetch-product";
                     alert('Item successfully removed!');
